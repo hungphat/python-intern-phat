@@ -1,6 +1,16 @@
 a={}
+e=0
 n=0
+claim=[]
 from datetime import date
+with open("input3.txt") as k:
+    for test in k:
+        if e >=2:
+            abc=test.split()
+            claim.append(abc[6])
+        e+=1
+
+
 with open("input3.txt") as f:
     #next(f)
     for line in f:
@@ -40,11 +50,16 @@ with open("input3.txt") as f:
             #region premium
 
             premium = int(splitline[5])
-            claim_count = int(splitline[6])
-            if claim_count < 2 and birthcalcu < 26:
-                premium=premium * 2
-            if claim_count == 2 :
-                premium = premium * 3
+            claim_count =splitline[6]
+            user=[nricfin , first_name, middle_name, last_name, date_of_birth, premium, claim_count]
+            my_max = max(claim)
+            if birthcalcu < 26 and user[6]< my_max:
+                premium*=2
+            if user[6] == my_max:
+                premium*=3
+
+
+
 
             #endregion premium
 
