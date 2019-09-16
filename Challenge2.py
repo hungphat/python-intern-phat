@@ -58,9 +58,6 @@ with open("input3.txt") as f:
             if user[6] == my_max:
                 premium*=3
 
-
-
-
             #endregion premium
 
             print(nricfin , first_name, middle_name, last_name, date_of_birth, premium)
