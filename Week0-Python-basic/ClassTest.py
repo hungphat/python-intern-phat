@@ -7,7 +7,8 @@ Claim_list=[]
 users_list=[]
 from datetime import date
 today=date.today()
-class File:
+
+class File:  #TODO Phat should name the class Customer
 
     def __init__(self, nricfin, first_name, middle_name, last_name, dob, premium, claim_count):
         self.nricfin  = nricfin
@@ -17,6 +18,8 @@ class File:
         self.dob = dob
         self.premium = premium
         self.claim_count = claim_count
+
+    #TODO Phat add 1-2 blank lines before function
     def getNricfin(self):
         return self.nricfin
     def getdob(self):
@@ -27,12 +30,15 @@ class File:
         return self.middle_name[0]
     def getLastName(self):
         return  self.last_name
+
     def getPremium(self, claim_count, maxclaim):
+        #TODO Phat write method to compute age and use here
         if (today.year - int(self.dob[0:4])) < 26 and claim_count < max(maxclaim):
             return int(self.premium) * 2
         if max(maxclaim) == claim_count:
             return int(self.premium) * 3
         return self.premium
+
     def getClaimCount(self):
         return self.claim_count
 
