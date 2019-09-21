@@ -1,8 +1,8 @@
 --00. Create Database
-Create database Sqlpostgres;
+Create database Sqlpostgres; --TODO Phat move this to a separate file
 
 -- Create Table
-Create table Customer(
+Create table Customer(  --TODO Phat incorrect schema compared to the assessment requirement
 	CustomerName varchar(100) primary key,
 	Address varchar(max),
 	Age int not null
