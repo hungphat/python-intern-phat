@@ -1,5 +1,5 @@
 --00. Create Database
-Create database Sqlpostgres; --TODO Phat move this to a separate file
+Create database CustomerData; --TODO Phat move this to a separate file
 
 -- Create Table
 Create table Customer(  --TODO Phat incorrect schema compared to the assessment requirement
