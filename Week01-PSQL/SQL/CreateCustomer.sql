@@ -1,6 +1,10 @@
 -- Create Table
-Create table Customer(  --TODO Phat incorrect schema compared to the assessment requirement
-	CustomerName varchar(100) primary key,
-	Address varchar(max),
-	Age int not null
+CREATE TABLE CUSTOMERS(
+	id int PRIMARY KEY,
+	name VARCHAR(50) NOT NULL,
+	birth DATE NOT NULL ,
+	address VARCHAR(50),
+	phone VARCHAR(20)
 );
+
+

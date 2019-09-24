@@ -1,6 +1,6 @@
---02. Insert Customer info
+--02. Insert CUSTOMERS info
 
-insert into Customer (CustomerName,Address,Age) values('A','Sai Gon','20');
-insert into Customer (CustomerName,Address,Age) values('B','Ha Noi','30');
-insert into Customer (CustomerName,Address,Age) values('C','Sai Gon','10');
-insert into Customer (CustomerName,Address,Age) values('D','Sai Gon','50');
+insert into CUSTOMERS (id,name,birth,address,phone) values('001','Nguyen Phu Trong','1998-05-10','Sai Gon','1234556');
+insert into CUSTOMERS (id,name,birth,address,phone) values('002','Nguyen Tan Dung','1950-07-10','Ben Tre','1234141');
+insert into CUSTOMERS (id,name,birth,address,phone) values('003','Truong Tan Sang','1970-09-10','Ca Mau','12361241');
+insert into CUSTOMERS (id,name,birth,address,phone) values('004','Nguyen Sinh Hung','1980-02-10','Ha Noi','123514');
