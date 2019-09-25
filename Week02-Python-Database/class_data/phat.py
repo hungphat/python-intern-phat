@@ -1,4 +1,4 @@
-from Database import data_base
+from Database import data_base  # TODO: em bi bao do khi import nhung van chay dc
 from datetime import datetime,date
 from sqlalchemy import *
 from sqlalchemy.ext.declarative import declarative_base
@@ -20,3 +20,25 @@ class User(Base):
 for test in dataq.query(User):
     a = [test.name]
     print(a)
+
+testuser = User(id = 6,
+                name = 'Phat Dep Trai',
+                address = 'Ha Noi',
+                birth = date(1993, 11, 5), #todo : em muon insert vao ma cu bi loi int
+                phone = '0764222993',
+                update_at = datetime.utcnow()
+                )
+dataq.add(testuser)
+dataq.commit()
+
+#--Update User
+
+x = dataq.query(User).get(2)
+x.address = 'Hoang Sa'
+x.update_at = datetime.now()
+dataq.commit()
+
+#-- delete User
+x = dataq.query(User).get(1)
+dataq.delete(x)
+dataq.commit()
