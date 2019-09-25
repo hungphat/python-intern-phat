@@ -40,7 +40,7 @@ session = Session()
 testuser = User(id = 6,
                 name = 'Phat Dep Trai',
                 address = 'Sai Gon',
-                birth = datetime.date(1993, 11, 5), #todo : em muon insert vao ma cu bi loi int
+                birth = date(1993, 11, 5), #todo : em muon insert vao ma cu bi loi int
                 phone = '0764222993',
                 update_at = datetime.utcnow()
                 )
