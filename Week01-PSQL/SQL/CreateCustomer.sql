@@ -1,4 +1,5 @@
 -- Create Table
+--TODO name the table should be lower case
 CREATE TABLE CUSTOMERS(
 	id int PRIMARY KEY,
 	name VARCHAR(50) NOT NULL,

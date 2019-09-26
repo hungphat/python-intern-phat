@@ -13,7 +13,7 @@ class data_base:
     Session = sessionmaker(bind=engine)
     session = Session()
 
-
+#TODO one line at the end of the script only
 
 
 

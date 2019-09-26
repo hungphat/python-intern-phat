@@ -1,4 +1,4 @@
-from Database import data_base  # TODO: em bi bao do khi import nhung van chay dc
+from Database import data_base  # TODO: you should set Week02 as a Source root
 from datetime import datetime,date
 from sqlalchemy import *
 from sqlalchemy.ext.declarative import declarative_base
@@ -16,15 +16,16 @@ class User(Base):
     phone     = Column(String)
     update_at = Column(DateTime)
 
-
+#TODO perform CRUD operation and comment in each case below this line
 for test in dataq.query(User):
     a = [test.name]
     print(a)
 
+#TODO it would be look better when queuing the equal "=" in vertical
 testuser = User(id = 6,
                 name = 'Phat Dep Trai',
                 address = 'Ha Noi',
-                birth = date(1993, 11, 5), #todo : em muon insert vao ma cu bi loi int
+                birth = date(1993, 11, 5), #TODO : using String in this case e.g '19931105'
                 phone = '0764222993',
                 update_at = datetime.utcnow()
                 )
@@ -39,6 +40,7 @@ x.update_at = datetime.now()
 dataq.commit()
 
 #-- delete User
-x = dataq.query(User).get(1)
+x = dataq.query(User).get(1) #TODO should name a meaning variable instead of meaningless one
 dataq.delete(x)
 dataq.commit()
+#TODO should add one empty line at the end of the script
