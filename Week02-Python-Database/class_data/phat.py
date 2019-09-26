@@ -1,58 +1,58 @@
-from Database import data_base  # TODO: em bi bao do khi import nhung van chay dc
+from Database import data_base
 from datetime import datetime,date
 from sqlalchemy import *
 from sqlalchemy.ext.declarative import declarative_base
 
 dt   = datetime.now()
 Base = declarative_base()
-dataq = data_base.session
+datasess = data_base.session
 
 class User(Base):
     __tablename__ = 'customers'
-    id        = Column(Integer,    primary_key=True)
-    name      = Column(String)
-    birth     = Column(Date)
-    address   = Column(String)
-    phone     = Column(String)
-    update_at = Column(DateTime)
+    id            = Column(Integer,    primary_key=True)
+    name          = Column(String)
+    birth         = Column(Date)
+    address       = Column(String)
+    phone         = Column(String)
+    update_at     = Column(DateTime)
 
-    def __init__(self,  id,  name,   birth,  address,    phone):
+    def __init__(self,  id,  name,   birth,  address,    phone,    update_at):
         self.id      = id
         self.name    = name
         self.birth   = birth
         self.address = address
         self.phone   = phone
+        self.update_at  = update_at
 
 #CRUD alchemy
-
+dataquery = datasess.query(User)
 #--Create
 
-testuser = User(id = 6,
-                name = 'Phat Dep Trai',
-                address = 'Ha Noi',
-                birth = date(1993, 11, 5), #todo : em muon insert vao ma cu bi loi int
-                phone = '0764222993',
-                update_at = datetime.utcnow()
-                )
-dataq.add(testuser)
-dataq.commit()
+adduser = User(id         =  7,
+                name      = 'Alexander',
+                address   = 'Ha Noi',
+                birth     = date(1967, 5, 9),
+                phone     = '07642212334',
+                update_at = datetime.utcnow())
+datasess.add(adduser)
+datasess.commit()
 
 
 #--Read
 
-for read in dataq.query(User):
-    a = f'{read.id} {read.name} {read.birth} {read.address} {read.phone}'
-    print (a)
+for read in dataquery:
+    a = f'{read.id}   {read.name}  {read.birth} {read.address}   {read.phone}'
+    print(a)
 
 
 #--Update User
 
-x = dataq.query(User).get(2)
+x = dataquery.get(3)
 x.address = 'Hoang Sa'
 x.update_at = datetime.now()
-dataq.commit()
+datasess.commit()
 
 #-- Delete User
-x = dataq.query(User).get(1)
-dataq.delete(x)
-dataq.commit()
+x = dataquery.get(4)
+datasess.delete(x)
+datasess.commit()

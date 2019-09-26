@@ -16,6 +16,3 @@ class data_base:
 
 
 
-
-
-
