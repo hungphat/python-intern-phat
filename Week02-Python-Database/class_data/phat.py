@@ -16,10 +16,16 @@ class User(Base):
     phone     = Column(String)
     update_at = Column(DateTime)
 
+    def __init__(self,  id,  name,   birth,  address,    phone):
+        self.id      = id
+        self.name    = name
+        self.birth   = birth
+        self.address = address
+        self.phone   = phone
 
-for test in dataq.query(User):
-    a = [test.name]
-    print(a)
+#CRUD alchemy
+
+#--Create
 
 testuser = User(id = 6,
                 name = 'Phat Dep Trai',
@@ -31,6 +37,14 @@ testuser = User(id = 6,
 dataq.add(testuser)
 dataq.commit()
 
+
+#--Read
+
+for read in dataq.query(User):
+    a = f'{read.id} {read.name} {read.birth} {read.address} {read.phone}'
+    print (a)
+
+
 #--Update User
 
 x = dataq.query(User).get(2)
@@ -38,7 +52,7 @@ x.address = 'Hoang Sa'
 x.update_at = datetime.now()
 dataq.commit()
 
-#-- delete User
+#-- Delete User
 x = dataq.query(User).get(1)
 dataq.delete(x)
 dataq.commit()
