@@ -11,9 +11,9 @@ wr = open('output', 'w')
 for e in c:
     t = max(c)
     if e == t:
-        wr.write('1\n',t)
+        wr.write('1\n')
     else:
-        wr.write('0 \n')
+        wr.write('0\n')
 wr.close()
 
 

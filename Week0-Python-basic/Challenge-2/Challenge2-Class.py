@@ -46,7 +46,7 @@ class Customer:  #TODO Phat should name the class Customer
     def getClaimCount(self):
         return self.claim_count
 
-with open("input3.txt",'r') as f:
+with open("input.txt",'r') as f:
     for a in f:
         if e>= 2:
             info = a.split()
@@ -55,13 +55,13 @@ with open("input3.txt",'r') as f:
         e+=1
     Claim_list = [maxClaim.claim_count for maxClaim in users_list]
     print(Claim_list)
-
-with open("input3.txt",'r') as f:
+wr = open('output.txt', 'w')
+with open("input.txt", 'r') as f:
     #next(f)
     for line in f:
         if n==0:                        # lay dong so 1 neu n = 0 do dem tu 0
             #a[n]= line.rstrip()
-            print(line.rstrip())
+            wr.write(f'{line.strip()}\n')
         if n>=2:                        #lay tu dong so 3
             #test = Customer( 'nricfin', 'first_name', 'middle_name', 'last_name', 'dob', 'premium', 'claim_count')
             #print(test.getdob())
@@ -69,9 +69,10 @@ with open("input3.txt",'r') as f:
             #print(info)
             user_info = Customer(*info)
 
-            print(f'{user_info.getNricfin()}, {user_info.getFirstName()} '
-                  f'{user_info.getMiddleName().upper()}. '
-                  f'{user_info.getLastName().upper()}, '
-                  f'{user_info.getdob()} '
-                  f'{user_info.getPremium(user_info.getClaimCount(),Claim_list)}')
+            wr.write(f'{user_info.getNricfin()}, {user_info.getFirstName()} '
+                     f'{user_info.getMiddleName().upper()}. '
+                     f'{user_info.getLastName().upper()}, '
+                     f'{user_info.getdob()} '
+                     f'{user_info.getPremium(user_info.getClaimCount(),Claim_list)} \n')
         n+=1
+wr.close()
