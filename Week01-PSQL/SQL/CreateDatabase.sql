@@ -1,2 +1,3 @@
 --00. Create Database
-Create database CustomerData;
+DROP DATABASE IF EXISTS CustomerData;
+CREATE DATABASE CustomerData;

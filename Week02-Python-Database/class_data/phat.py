@@ -26,18 +26,18 @@ class User(Base):
 
 #CRUD alchemy
 dataquery = datasess.query(User)
-#--Create
-
-adduser = User(id         =  7,
-                name      = 'Alexander',
-                address   = 'Ha Noi',
-                birth     = date(1967, 5, 9),
-                phone     = '07642212334',
-                update_at = datetime.utcnow())
-datasess.add(adduser)
-datasess.commit()
-
-
+# #--Create
+#
+# adduser = User(id         =  7,
+#                 name      = 'Alexander',
+#                 address   = 'Ha Noi',
+#                 birth     = date(1967, 5, 9),
+#                 phone     = '07642212334',
+#                 update_at = datetime.utcnow())
+# datasess.add(adduser)
+# datasess.commit()
+#
+#
 #--Read
 
 for read in dataquery:
@@ -45,14 +45,14 @@ for read in dataquery:
     print(a)
 
 
-#--Update User
-
-x = dataquery.get(3)
-x.address = 'Hoang Sa'
-x.update_at = datetime.now()
-datasess.commit()
-
-#-- Delete User
-x = dataquery.get(4)
-datasess.delete(x)
-datasess.commit()
+# #--Update User
+#
+# x = dataquery.get(3)
+# x.address = 'Hoang Sa'
+# x.update_at = datetime.now()
+# datasess.commit()
+#
+# #-- Delete User
+# x = dataquery.get(4)
+# datasess.delete(x)
+# datasess.commit()
