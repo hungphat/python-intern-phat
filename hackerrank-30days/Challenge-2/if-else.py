@@ -15,9 +15,5 @@ for a in f:
             wr.write('Not Weird \n')
     except ValueError:
         wr.write('Chi xet so nguyen \n')
-
-
-
-
 wr.close()
 
