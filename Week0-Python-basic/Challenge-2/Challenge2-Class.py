@@ -11,13 +11,13 @@ today=date.today()
 class Customer:  #TODO Phat should name the class Customer
 
     def __init__(self, nricfin, first_name, middle_name, last_name, dob, premium, claim_count):
-        self.nricfin  = nricfin
-        self.first_name = first_name
-        self.middle_name = middle_name
-        self.last_name = last_name
-        self.dob = dob
-        self.premium = premium
-        self.claim_count = claim_count
+        self.nricfin        = nricfin
+        self.first_name     = first_name
+        self.middle_name    = middle_name
+        self.last_name      = last_name
+        self.dob            = dob
+        self.premium        = premium
+        self.claim_count    = claim_count
 
     #TODO Phat add 1-2 blank lines before function
     def getNricfin(self):
